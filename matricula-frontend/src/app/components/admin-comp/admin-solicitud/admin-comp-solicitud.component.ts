@@ -82,7 +82,7 @@ export class AdminSolicitudComponent implements OnInit{
             let correo=entidad.estudianteEntidad.correoElectronico;
             let cuerpo="Tu solicitud fue aceptada \n"+
                     "NOMBRE CURSO: "+entidad.cursoEntidad.nombreCurso+"\n"+
-                    "NIVEL CURSO: "+entidad.cursoEntidad.nombreCurso+"\n"+
+                    "NIVEL CURSO: "+entidad.cursoEntidad.nivel+"\n"+
                     "HORARIO: "+entidad.cursoEntidad.horario+"\n"+
                     "FECHA DE INICIO: "+this.formatFecha2(entidad.cursoEntidad.fechaInicio+"")+"\n"+
                     "";
