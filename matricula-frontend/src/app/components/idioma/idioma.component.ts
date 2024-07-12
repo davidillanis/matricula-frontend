@@ -4,6 +4,7 @@ import { CursoEntidad } from '../../model/curso-entidad';
 import {ChangeDetectionStrategy} from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import { AlertEntityService } from '../../service/alert-entity.service';
 
 @Component({
   selector: 'app-idioma',
@@ -16,7 +17,7 @@ export class IdiomaComponent implements OnInit{
   cursosList=new Map<String, Set<string>>();
   cursoEntityList:CursoEntidad[]=[];
 
-  constructor(private cursoServicio:CursoService){}
+  constructor(private cursoServicio:CursoService, private alertEntityService:AlertEntityService){}
 
   ngOnInit(): void {
     
@@ -70,5 +71,11 @@ export class IdiomaComponent implements OnInit{
       }
     }
     return nuevo;
+  }
+
+  modalCurso(idCurso:number){
+    this.cursoServicio.getCurso(idCurso).subscribe(entidad=>{
+      this.alertEntityService.modalCurso(entidad);
+    })
   }
 }

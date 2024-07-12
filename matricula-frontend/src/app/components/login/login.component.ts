@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginService } from '../../service/login.service';
+import { AlertEntityService } from '../../service/alert-entity.service';
 
 @Component({
   selector: 'app-login',
@@ -25,11 +26,19 @@ import { LoginService } from '../../service/login.service';
 })
 export class LoginComponent {
 
-  constructor(private loginService:LoginService){}
+  constructor(private loginService:LoginService, private alertEntityService:AlertEntityService){}
 
 
-  login(){
-    this.loginService.login("admin", "1234");
-    window.location.href='/admin';
+  login(user:string, pass:string){
+    this.loginService.login(user, pass).subscribe(status=>{
+      if(status){
+        this.alertEntityService.alertaSuccess("Login", 'Inicio de sesion correctamente', true, 1600).then(()=>{
+          window.location.href='/admin';
+        });
+      }else{
+        this.alertEntityService.alertaError("Error", "Las Credenciales no son correctas", '');
+      }
+    });
+    
   }
 }

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,9 @@ export class LoginService {
   public login(username:string, password:string){
     if(username=="admin" && password =="1234"){
       sessionStorage.setItem('isLogget', "true");
+      return of(true);
     }
+    return of(false);
   }
 
   public logout(){

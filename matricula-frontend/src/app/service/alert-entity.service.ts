@@ -198,6 +198,8 @@ export class AlertEntityService {
           background-color: #f4f4f4;
       }
       .container {
+          
+          height: 50vh;
           max-width: 800px;
           margin: 50px auto;
           background-color: #fff;
@@ -276,7 +278,7 @@ export class AlertEntityService {
       </table>
   </div>
       `,
-      showCancelButton: true,
+      showCancelButton: false,
       focusConfirm: false,
       customClass: {
           popup: 'swal-wide'
@@ -291,17 +293,14 @@ export class AlertEntityService {
      * @param buttonEnable control if visible the button
      * @param timer time of live of the alert
      */
-  async alertaSuccess(title: string, text: string, buttonEnable: boolean = true, timer: number = 1500, updatePage: boolean = false): Promise<void> {
-    await Swal.fire({
+  async alertaSuccess(title: string, text: string, buttonEnable: boolean = true, timer: number = 1500) {
+    return  Swal.fire({
       icon: "success",
       title: title,
       text: text,
       showConfirmButton: buttonEnable,
       timer: timer
     });
-    if (updatePage) {
-      location.reload();
-    }
   }
   /**
    * method for notification alerts

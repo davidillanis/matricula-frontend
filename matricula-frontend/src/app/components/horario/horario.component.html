@@ -10,6 +10,7 @@
                 <ul>
                     @for (curso of getCursosFiltroNombre(nombreCurso+""); track $index) {
                         <li>
+                            <h3>{{curso.nivel}}</h3>
                             Horario: {{curso.horario}} <br>
                             Duracion: {{curso.duracion}}
                         </li>

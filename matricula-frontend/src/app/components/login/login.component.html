@@ -7,14 +7,14 @@
         <mat-card-content class="cont">
             <form>
                 <mat-form-field appearance="fill" class="caja">
-                    <mat-label>Correo</mat-label>
-                    <input matInput required>
+                    <mat-label>Username</mat-label>
+                    <input matInput required #user>
                 </mat-form-field>
                 <mat-form-field appearance="fill" class="caja">
                     <mat-label>Contraseña</mat-label>
-                    <input matInput type="password" required>
+                    <input matInput type="password" required #pass>
                 </mat-form-field>
-                <button mat-raised-button color="primary" type="submit" class="boton" (click)="login()">Iniciar sesión</button>
+                <button mat-raised-button color="primary" type="submit" class="boton" (click)="login(user.value, pass.value)">Iniciar sesión</button>
             </form>
         </mat-card-content>
     </mat-card>
