@@ -9,8 +9,8 @@ export class ImageService {
 
   constructor(private httpClient:HttpClient) { }
   public async usarApi(fileInputParam: any) {
-    const url: string = 'https://api.imgbb.com/1/upload';
-    const apiKey: string = 'a3d1b74ce17fdaf5e53592b7bf47cbf2';
+    const url: string = '';
+    const apiKey: string = '';
 
     const fileInput: any = fileInputParam;
     const file: File | null = fileInput.files?.[0] || null;
