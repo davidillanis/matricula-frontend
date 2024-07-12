@@ -20,6 +20,7 @@ import {
 import Swal from 'sweetalert2';
 import { EstudianteEntidad } from '../../../model/estudiante-entidad';
 import { CursoEntidad } from '../../../model/curso-entidad';
+import { ImageService } from '../../../service/image.service';
 
 @Component({
   selector: 'app-admin-solicitud',
@@ -45,7 +46,7 @@ export class AdminSolicitudComponent implements OnInit{
   dataToDisplay = [this.ELEMENT_DATA];
   dataSource = new ExampleDataSource(this.ELEMENT_DATA);
   
-  constructor(private matriculaServicio:MatriculaService, private dialog: MatDialog){}
+  constructor(private matriculaServicio:MatriculaService, private dialog: MatDialog, private imageService:ImageService){}
 
   ngOnInit(): void {
     this.actualizarDatos();
@@ -77,6 +78,15 @@ export class AdminSolicitudComponent implements OnInit{
           this.matriculaServicio.actualizarMatricula(entidad).subscribe(()=>{
             this.actualizarDatos();
             Swal.fire("Solicitud aceptada!", "", "success");
+            console.log(entidad.estudianteEntidad.correoElectronico);
+            let correo=entidad.estudianteEntidad.correoElectronico;
+            let cuerpo="Tu solicitud fue aceptada \n"+
+                    "NOMBRE CURSO: "+entidad.cursoEntidad.nombreCurso+"\n"+
+                    "NIVEL CURSO: "+entidad.cursoEntidad.nombreCurso+"\n"+
+                    "HORARIO: "+entidad.cursoEntidad.horario+"\n"+
+                    "FECHA DE INICIO: "+this.formatFecha2(entidad.cursoEntidad.fechaInicio+"")+"\n"+
+                    "";
+            this.imageService.sendEmail("brayanillanis@gmail.com", "Matricula Unajma", cuerpo).subscribe(data=>console.log(data));
           });
         })
       }
@@ -294,6 +304,18 @@ export class AdminSolicitudComponent implements OnInit{
     for(let i=0; i<fecha.length; i++){
       if(i<fecha.length-1){
         nuevo+=fecha[i]+"-";
+      }
+      else{
+        nuevo+=fecha[i];
+      }
+    }
+    return nuevo;
+  }
+  formatFecha2(fecha:string){
+    let nuevo='';
+    for(let i=0; i<fecha.length; i++){
+      if(fecha[i]==','){
+        nuevo+="-";
       }
       else{
         nuevo+=fecha[i];

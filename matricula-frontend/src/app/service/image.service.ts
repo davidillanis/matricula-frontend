@@ -51,4 +51,9 @@ export class ImageService {
   public subirPDF(body:FormData):Observable<any>{
     return this.httpClient.post(`http://localhost:3000/upload`, body)
   }
+
+  sendEmail(to: string, subject: string, text: string): Observable<any> {
+    const body = { to, subject, text };
+    return this.httpClient.post(`http://localhost:3001/send-email`, body);
+  }
 }
