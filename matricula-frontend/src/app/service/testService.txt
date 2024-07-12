@@ -1,0 +1,31 @@
+buttonActionTestCurso():void{
+    //this.cursoService.getCursos().subscribe(t=>console.log(t));
+    //this.cursoService.getCurso(1).subscribe(t=>console.log(t));
+    //this.cursoService.crearCurso(new CursoEntidad(0, "CURSO001", new ProfesorEntidad(1, null, null, null, null, null), null, "--", 3, "DOS SEMANAS", "LUNES", "BASICO", 20, new Date(), new Date())).subscribe(t=>console.log(t));
+    //this.cursoService.actualizarCurso(new CursoEntidad(2, "ingles", null, null, "--", 1, "---", "--", "--", 30, new Date(), new Date())).subscribe(t=>console.log(t));
+    //this.cursoService.eliminarCurso(1).subscribe(t=>console.log(t));
+  }
+
+  buttonActionTestProfesor():void{
+    //this.profesorService.getProfesores().subscribe(t=>console.log(t));
+    //this.profesorService.getProfesor(1).subscribe(t=>console.log(t));
+    //this.profesorService.crearProfesor(new ProfesorEntidad(0,'','','',null,'')).subscribe(t=>console.log(t));
+    //this.profesorService.actualizarCurso(new CursoEntidad(2, "ingles", null, null, "--", 1, "---", "--", "--", 30, new Date(), new Date())).subscribe(t=>console.log(t));
+    //this.profesorService.eliminarCurso(1).subscribe(t=>console.log(t));
+  }
+
+  buttonActionTestEstudiante():void{
+    //this.cursoService.getCursos().subscribe(t=>console.log(t));
+    //this.cursoService.getCurso(1).subscribe(t=>console.log(t));
+    //this.cursoService.crearCurso(new CursoEntidad(0, "CURSO001", new ProfesorEntidad(1, null, null, null, null, null), null, "--", 3, "DOS SEMANAS", "LUNES", "BASICO", 20, new Date(), new Date())).subscribe(t=>console.log(t));
+    //this.cursoService.actualizarCurso(new CursoEntidad(2, "ingles", null, null, "--", 1, "---", "--", "--", 30, new Date(), new Date())).subscribe(t=>console.log(t));
+    //this.cursoService.eliminarCurso(1).subscribe(t=>console.log(t));
+  }
+
+  buttonActionTestMatricula():void{
+    //this.cursoService.getCursos().subscribe(t=>console.log(t));
+    //this.cursoService.getCurso(1).subscribe(t=>console.log(t));
+    //this.cursoService.crearCurso(new CursoEntidad(0, "CURSO001", new ProfesorEntidad(1, null, null, null, null, null), null, "--", 3, "DOS SEMANAS", "LUNES", "BASICO", 20, new Date(), new Date())).subscribe(t=>console.log(t));
+    //this.cursoService.actualizarCurso(new CursoEntidad(2, "ingles", null, null, "--", 1, "---", "--", "--", 30, new Date(), new Date())).subscribe(t=>console.log(t));
+    //this.cursoService.eliminarCurso(1).subscribe(t=>console.log(t));
+  }

@@ -1,0 +1,63 @@
+
+<div class="nav-main-unajma">
+
+  <div class="header-logo" style="padding-top: 10px;">
+    <div class="header-logo-izq">
+      <img src="../assets/images/unajma.png" height="60">
+    </div>
+    <div class="header-logo-der">
+      <img src="../assets/images/unajma_idiomas.png" height="60">
+    </div>
+  </div>
+  
+  <mat-toolbar color="primary">
+    <div class="left-content">
+      <button mat-icon-button class="mobile-menu-button" (click)="toggleMobileMenu()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      
+      <div class="menu-content">
+        <a mat-button href="/menu">Inicio</a>
+        <button mat-button [matMenuTriggerFor]="menuIdioma">Idioma</button>
+        <mat-menu #menuIdioma="matMenu">
+          @for (c of cursosList.keys(); track $index) {
+            <a mat-menu-item [href]="concaternarURL(c+'')">{{c}}</a>
+          }
+        </mat-menu>
+        <a mat-button href="/matricula">Matrícula</a>
+        <a mat-button href="/horario">Horario</a>
+        @if (isLogin()) {
+          <a mat-button href="/admin">Admin</a>
+        }
+      </div>
+    </div>
+    <span class="spacer"></span>
+    @if (!isLogin()) {
+    <a mat-button href="/login">Login</a>
+    }@else {
+      <button mat-button (click)="logOut()">Loguot</button>
+    }
+  </mat-toolbar>
+  
+  @if (mobileMenuOpen) {
+  <div class="mobile-menu">
+    <a mat-button (click)="toggleMobileMenu()" href="/menu">Inicio</a>
+  
+    <button mat-button [matMenuTriggerFor]="menu">Idioma</button>
+    <mat-menu #menu="matMenu">
+      <a mat-menu-item href="/idioma">Ingles</a>
+      <a mat-menu-item href="/idioma">Quechua</a>
+    </mat-menu>
+    <a mat-button (click)="toggleMobileMenu()" href="/matricula">Matrícula</a>
+    <a mat-button (click)="toggleMobileMenu()" href="/horario">Horario</a>
+    @if (isLogin()) {
+      <a mat-button (click)="toggleMobileMenu()" href="/admin">Admin</a>
+    }
+  </div>
+  }
+
+</div>
+
+<br><br><br><br><br><br>
+
+<router-outlet />

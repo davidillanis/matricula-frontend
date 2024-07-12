@@ -1,0 +1,24 @@
+
+<div class="container">
+    <header>
+        <h1>Mi Horario Semanal</h1>
+    </header>
+    <div class="schedule">
+        @for (nombreCurso of cursosList.keys(); track $index) {
+            <div class="day">
+                <h2>{{nombreCurso}}</h2>
+                <ul>
+                    @for (curso of getCursosFiltroNombre(nombreCurso+""); track $index) {
+                        <li>
+                            Horario: {{curso.horario}} <br>
+                            Duracion: {{curso.duracion}}
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+</div>
+<footer>
+    <p>&copy; 2024 Universidad Nacional José María Arguedas - Todos los derechos reservados</p>
+</footer>

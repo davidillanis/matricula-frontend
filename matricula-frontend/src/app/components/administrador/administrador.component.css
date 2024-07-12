@@ -1,0 +1,42 @@
+.example-container {
+    width: auto;
+    height: 80%;
+    margin: 10px;
+    border: 2px solid transparent; /* Borde transparente */
+    background: #ffffff; /* Fondo blanco para mayor contraste y claridad */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* Sombra primaria */
+                0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra secundaria para mayor profundidad */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+.nav-container{
+    background-color: rgba(128, 0, 128, 0.2);
+}
+.nav-menu-parent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-menu{
+    height: 95%;
+    width: 97%;
+}
+
+/*toggle button*/
+.custom-toggle-group {
+    display: grid;
+}.custom-toggle-group .mat-button-toggle {
+    background-color: #f0f0f0;
+    color: #800080;
+    border: 1px solid #800080;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}.custom-toggle-group .mat-button-toggle:hover {
+    background-color: #e0e0e0;
+}.custom-toggle-group .mat-button-toggle-checked {
+    background-color: #800080;
+    color: white;
+    border-color: #800080;
+}.custom-toggle-group .mat-button-toggle-checked:hover {
+    background-color: #6a006a;
+}
+

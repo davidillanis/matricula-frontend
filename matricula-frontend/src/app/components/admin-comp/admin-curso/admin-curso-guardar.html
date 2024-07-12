@@ -1,0 +1,119 @@
+<div class="curso-form-container">
+  <form [formGroup]="cursoForm" (ngSubmit)="guardarDatos()" class="curso-form">
+    <div class="section">
+      <h2>Información del Curso</h2>
+      <div class="row">
+        <div class="column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Nombre del Curso</mat-label>
+            <input matInput formControlName="nombreCurso" required maxlength="45">
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Descripción</mat-label>
+            <textarea matInput formControlName="descripcion" maxlength="1000"></textarea>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Créditos</mat-label>
+            <input matInput formControlName="creditos" type="number" required>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Duración</mat-label>
+            <input matInput formControlName="duracion" maxlength="45">
+          </mat-form-field>
+        </div>
+        <div class="column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Horario</mat-label>
+            <input matInput formControlName="horario" maxlength="95">
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Nivel</mat-label>
+            <input matInput formControlName="nivel" maxlength="45">
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Capacidad</mat-label>
+            <input matInput formControlName="capacidad" type="number" required>
+          </mat-form-field>
+  
+          <div class="mb-3">
+            <mat-label>Imagen/Foto curso</mat-label>
+            <input class="form-control form-control-sm" type="file" name="file" id="fileFichaMatricula" accept=".jpg, .jpeg, .png, .gif" (change)="cargarImagenCurso($event)">
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="section">
+      <h2>Costos</h2>
+      <div class="row">
+        <div class="column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Costo del Curso</mat-label>
+            <input matInput formControlName="costoCurso" type="number" required>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Costo del Libro</mat-label>
+            <input matInput formControlName="costoLibro" type="number" required>
+          </mat-form-field>
+        </div>
+        <div class="column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Primera Mensualidad</mat-label>
+            <input matInput formControlName="primeraMensualidad" type="number" required>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  
+    <div class="section">
+      <h2>Fechas</h2>
+      <div class="row">
+        <div class="column">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Fecha de Inicio</mat-label>
+            <input matInput formControlName="fechaInicio" [matDatepicker]="picker1" required>
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+  
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Fecha de Finalización</mat-label>
+            <input matInput formControlName="fechaFinalizacion" [matDatepicker]="picker2" required>
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="section">
+      <h2>Profesor</h2>
+      <div class="row">
+        <div class="column">
+          
+          <mat-form-field>
+            <mat-label>Nombre</mat-label>
+            <mat-select formControlName="profesorEntidad" required #IdProfesor>
+              @for (p of profesorList; track $index) {
+                <mat-option [value]="p.idProfesor">{{p.nombre}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+         <a mat-raised-button color="primary" (click)="modalProfesor(IdProfesor.value)">Información</a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="button-row">
+      <button mat-raised-button color="primary" type="submit">Guardar Curso</button>
+    </div>
+  </form>
+  
+</div>

@@ -1,0 +1,54 @@
+<h1>Lista de Solicitudes</h1>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table"> 
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>Id</th>
+    <td mat-cell *matCellDef="let element">{{element.idMatricula}}</td>
+  </ng-container>
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Fecha</th>
+    <td mat-cell *matCellDef="let element">{{formatFecha(element.fechaSolicitud)}}</td>
+  </ng-container>
+  <ng-container matColumnDef="symbol">
+    <th mat-header-cell *matHeaderCellDef>Codigo Estudiante</th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-button (click)="modalEstudiante(element.estudianteEntidad)">{{element.estudianteEntidad.codigoEstudiante}}</button>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="cursos">
+    <th mat-header-cell *matHeaderCellDef>Cursos</th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-button (click)="modalCurso(element.cursoEntidad)">Ver Curso</button>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="archivo">
+    <th mat-header-cell *matHeaderCellDef>Archivos</th>
+    <td mat-cell *matCellDef="let element">
+      <form>
+        <mat-form-field>
+          <mat-label>Archivos</mat-label>
+          <mat-select  name="food">
+              <mat-option><a (click)="openDialog(element.urlVoucher)">Voucher de Pago</a></mat-option>
+              <mat-option><a [href]="element.urlPdfMatricula" target="_blank">Ficha De Matricula</a></mat-option>
+              <mat-option><a [href]="element.urlPdfDeclaracionJurada" target="_blank">Declaracion Jurada</a></mat-option>
+              <mat-option><a [href]="element.urlPDFCartaCompromiso" target="_blank">Carta de compromiso</a></mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="accion">
+    <th mat-header-cell *matHeaderCellDef>Accion</th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-fab style="background-color: green; height: 40px; width: 40px;" (click)="aceptarSolicitud(element.idMatricula)">
+        <mat-icon>check</mat-icon>
+      </button>
+      <button mat-fab style="background-color: red; height: 40px; width: 40px;" (click)="rechazarSolicitud(element.idMatricula)">
+        <mat-icon>close</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

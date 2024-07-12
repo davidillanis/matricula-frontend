@@ -1,0 +1,33 @@
+<mat-card class="form-card">
+    <mat-toolbar color="primary">Agregar Profesor</mat-toolbar>
+    <form [formGroup]="profesorForm" (ngSubmit)="guardarDatos()" class="form-container">
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="nombre" required>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Apellido</mat-label>
+          <input matInput formControlName="apellido" required>
+        </mat-form-field>
+      </div>
+  
+      <div class="form-row">
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Teléfono</mat-label>
+          <input matInput formControlName="telefono">
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill" class="form-field">
+          <mat-label>Correo Electrónico</mat-label>
+          <input matInput formControlName="correoElectronico" required>
+        </mat-form-field>
+      </div>
+  
+      <mat-checkbox formControlName="habilitado" class="checkbox">Habilitado</mat-checkbox>
+  
+      <button mat-raised-button color="primary" type="submit" class="submit-button">Agregar</button>
+    </form>
+  </mat-card>
+  

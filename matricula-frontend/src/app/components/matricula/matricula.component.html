@@ -1,0 +1,115 @@
+<span></span><br>
+<div class="container">
+
+  <form class="example-form" [formGroup]="estudinteControl">
+    <div class="raw-container">
+      <mat-form-field class="example-form-field form-component">
+        <mat-label>Nombre</mat-label>
+        <input matInput type="text" formControlName="nombre">
+      </mat-form-field>
+
+      <mat-form-field class="example-form-field form-component">
+        <mat-label>Apellido</mat-label>
+        <input matInput type="text" formControlName="apellido">
+      </mat-form-field>
+
+    </div>
+
+    <div class="raw-container">
+      <mat-form-field class="example-full-width form-component">
+        <mat-label>DNI</mat-label>
+        <input type="text" matInput formControlName="dni">
+        @if (estudinteControl.get('dni')?.invalid) {
+        <mat-error>8 digitos de numeros</mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width form-component">
+        <mat-label>Codigo estudinte</mat-label>
+        <input type="text" matInput formControlName="codigo">
+        @if (estudinteControl.get('codigo')?.invalid) {
+        <mat-error>11 digitos de numeros</mat-error>
+        }
+      </mat-form-field>
+    </div>
+
+    <div class="raw-container">
+      <mat-form-field class="example-full-width form-component">
+        <mat-label>Telephone</mat-label>
+        <span matTextPrefix>+51 &nbsp;</span>
+        <input type="tel" matInput placeholder="921 129 22" formControlName="telefono">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width form-component">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email" [errorStateMatcher]="matcher"
+          placeholder="Ex. pat@example.com">
+        @if (estudinteControl.hasError('email') && !estudinteControl.hasError('required')) {
+        <mat-error>Please enter a valid email address</mat-error>
+        }
+        @if (estudinteControl.hasError('required')) {
+        <mat-error>Email is <strong>required</strong></mat-error>
+        }
+      </mat-form-field>
+    </div>
+
+    <div class="raw-container">
+      <section class="example-section">
+        @for (c of cursosList.keys(); track $index) {
+        <h4>{{c}}</h4>
+        @for (nivel of getCursosFiltroNombre(c+""); track $index) {
+        <p><mat-checkbox (change)="agregarCurso(nivel, $event.checked)">{{nivel.nivel}}</mat-checkbox></p>
+        }
+        }
+      </section>
+    </div>
+
+    <div class="raw-container">
+      <div class="mb-3">
+        <mat-label>Foto Baucher</mat-label>
+        <input class="form-control form-control-sm" type="file" name="file" id="file" accept=".jpg, .jpeg, .png, .gif"
+          (change)="loadImage('file','preview', $event)">
+      </div>
+      <div class="view-image image-preview">
+        <img id="preview"><br>
+      </div>
+    </div>
+    <div class="raw-container">
+      <div class="mb-3">
+        <mat-label>Foto DNI</mat-label>
+        <input class="form-control form-control-sm" type="file" name="file" id="fileDNI"
+          accept=".jpg, .jpeg, .png, .gif" (change)="loadImage('fileDNI','previewDNI', $event)">
+      </div>
+      <div class="view-image image-preview">
+        <img id="previewDNI"><br>
+      </div>
+    </div>
+    <div class="raw-container-grid">
+      <div class="mb-3">
+        <mat-label>Ficha Matricula/Diploma egresado</mat-label>
+        <input class="form-control form-control-sm" type="file" name="file" id="fileFichaMatricula" accept=".pdf" (change)="cargarPDFMatricula($event)">
+      </div>
+      <div class="mb-3">
+        <mat-label>Decalaracion Juarada</mat-label>
+        <input class="form-control form-control-sm" type="file" name="file" id="fileDeclaracionJurada" accept=".pdf"  (change)="cargarPDFDeclaracionJurada($event)">
+      </div>
+      <div class="mb-3">
+        <mat-label>Carta de Compromiso</mat-label>
+        <input class="form-control form-control-sm" type="file" name="file" id="fileCartaCompromiso" accept=".pdf"  (change)="cargarPDFCartaCompromiso($event)">
+      </div>
+    </div>
+
+    <div class="raw-container">
+      <button mat-raised-button style="background-color: rgb(192, 192, 247);" (click)="solicitarMatriculEstudiante()"
+        [disabled]="estudinteControl.invalid">Solicitar Matricula</button>
+    </div>
+  </form>
+</div>
+
+<br><br><br>
+<p>.</p>
+
+<footer>
+  <p>&copy; 2024 Universidad Nacional José María Arguedas - Todos los derechos reservados</p>
+</footer>

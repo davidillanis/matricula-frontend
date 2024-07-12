@@ -1,0 +1,41 @@
+<header>
+    <h1 style="color: rgb(149, 97, 0);">Centro de Idiomas UNAJMA</h1>
+</header>
+<div class="div-imagen" style="text-align: center;">
+  <img src="https://lh3.googleusercontent.com/proxy/UtyIUYsg1iXYTS4x5IkZOfkWzsROSaiOPVp90jyXlieo9Gyei1lzEKa8XQe8bUFy1aCjyrZ4bX5XJXPsEfCMwRDiaOJMopvdUID_l2qhFrnhgsZm9Luu4A" alt="">
+</div>
+<main>
+    <section>
+        <h2>Cursos Disponibles</h2>
+
+        <div class="div_list-curso" style="display: flex; flex-wrap: wrap; justify-content: center;">
+          
+
+          <!--@for-->
+          @for (c of cursosList.keys(); track $index) {
+            <mat-card class="example-card course" appearance="outlined" style="margin: 5px;">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{c}}</mat-card-title>
+                <mat-card-subtitle>{{getConcatenarNivelCurso(c+"")}}</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image [src]="getImageUrl(c+'')" alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                <p>
+                  ¡Aprende con nuestros cursos intensivos!
+                </p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-button>Me gusta</button>
+                <button mat-button>Aprende</button>
+              </mat-card-actions>
+            </mat-card>
+          }
+          
+        </div>
+
+    </section>
+</main>
+<footer>
+  <p>&copy; 2024 Universidad Nacional José María Arguedas - Todos los derechos reservados</p>
+</footer>

@@ -1,0 +1,25 @@
+<div class="login-container" >
+    <img src="../../assets/images/unajma_idiomas.png" alt="Logo" class="logo"  height="128"/>
+    <mat-card class="form-container">
+        <mat-card-header>
+            <mat-card-title>Iniciar Sesión</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="cont">
+            <form>
+                <mat-form-field appearance="fill" class="caja">
+                    <mat-label>Correo</mat-label>
+                    <input matInput required>
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="caja">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput type="password" required>
+                </mat-form-field>
+                <button mat-raised-button color="primary" type="submit" class="boton" (click)="login()">Iniciar sesión</button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<footer>
+    <p>&copy; 2024 Universidad Nacional José María Arguedas - Todos los derechos reservados</p>
+</footer>

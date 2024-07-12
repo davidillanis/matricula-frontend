@@ -1,0 +1,35 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" [opened]="isOpen" class="nav-container">
+        <mat-list role="list">
+            <mat-list-item role="listitem">ADMINISTRADOR</mat-list-item>
+        </mat-list>
+
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style" class="custom-toggle-group">
+            <mat-button-toggle (change)="cambiarObcionNav(1)">Solicitudes</mat-button-toggle>
+            <mat-button-toggle (change)="cambiarObcionNav(2)">Matricula</mat-button-toggle>
+            <mat-button-toggle (change)="cambiarObcionNav(3)">Cursos</mat-button-toggle>
+            <mat-button-toggle (change)="cambiarObcionNav(4)">Profesor</mat-button-toggle>
+        </mat-button-toggle-group>
+
+    </mat-drawer>
+
+    <mat-drawer-content class="nav-menu-parent">
+        <div class="nav-menu">
+            <button mat-mini-fab aria-label="Example icon button with a menu icon" (click)="cambiarEstadoNav()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            @if (adminSolicitud) {
+            <app-admin-solicitud></app-admin-solicitud>
+            }
+            @if (adminMatricula) {
+            <app-admin-matricula></app-admin-matricula>
+            }
+            @if (adminCurso) {
+            <app-admin-curso></app-admin-curso>
+            }
+            @if (adminProfesor) {
+            <app-admin-profesor></app-admin-profesor>
+            }
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

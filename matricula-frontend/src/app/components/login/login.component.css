@@ -1,0 +1,77 @@
+
+.form-container{
+    background-color: rgba(50, 43, 255, 0.3);
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    /* Adjust margin as needed */
+    flex: 1;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+mat-card {
+    width: 90%;
+    /* Responsive width */
+    max-width: 400px;
+    /* Maximum width */
+    margin-top: 20px;
+    /* Adjust spacing */
+}
+
+
+
+.sub-title {
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin: 1px 0;
+}
+
+
+@media (max-width: 600px) {
+    .logo {
+        max-height: 100px;
+        /* Reducir el tamaño de la imagen en dispositivos
+           móviles */
+    }
+}
+
+.caja {
+    width: 100%;
+
+    font-size: 14px;
+    height: 70px;
+
+}
+
+.caja mat-label {
+    font-size: 14px;
+}
+
+.boton {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}

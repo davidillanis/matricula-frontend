@@ -1,0 +1,43 @@
+.curso-form-container {
+    height: 80vh; /* Ocupa el 50% de la altura de la pantalla */
+    overflow-y: auto; /* Añade desplazamiento si el contenido es demasiado grande */
+  }
+  
+.curso-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.section h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #3f51b5;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.button-row {
+    display: flex;
+    justify-content: flex-end;
+}
