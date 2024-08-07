@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CursoEntidad } from '../model/curso-entidad';
@@ -9,7 +9,7 @@ import { ServerConfig } from '../util/dto/server-config';
 })
 export class CursoService {
   private apiUrl = ServerConfig.concatBackendAPI('/api/course');
-
+  
   constructor(private httpClient:HttpClient) { }
 
   getCursos(): Observable<CursoEntidad[]> {
