@@ -5,15 +5,15 @@ import { EstudianteEntidad } from '../model/estudiante-entidad';
 import { CursoEntidad } from '../model/curso-entidad';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class AlertEntityService {
 
-  constructor() { }
+    constructor() { }
 
-  modalProfesor(profesor:ProfesorEntidad){
-    Swal.fire({
-      html: `
+    modalProfesor(profesor: ProfesorEntidad) {
+        Swal.fire({
+            html: `
 <style>
         body {
             font-family: Arial, sans-serif;
@@ -92,14 +92,14 @@ export class AlertEntityService {
         </table>
     </div>
       `,
-      showCancelButton: true,
-      focusConfirm: false,
-    });
-  }
+            showCancelButton: true,
+            focusConfirm: false,
+        });
+    }
 
-  modalEstudiante(estudiante:EstudianteEntidad){
-    Swal.fire({
-      html: `
+    modalEstudiante(estudiante: EstudianteEntidad) {
+        Swal.fire({
+            html: `
 <style>
         body {
             font-family: Arial, sans-serif;
@@ -182,14 +182,14 @@ export class AlertEntityService {
         </table>
     </div>
       `,
-      showCancelButton: true,
-      focusConfirm: false,
-    });
-  }
+            showCancelButton: true,
+            focusConfirm: false,
+        });
+    }
 
-  modalCurso(curso:CursoEntidad){
-    Swal.fire({
-      html: `
+    modalCurso(curso: CursoEntidad) {
+        Swal.fire({
+            html: `
   <style>
       body {
           font-family: Arial, sans-serif;
@@ -278,73 +278,73 @@ export class AlertEntityService {
       </table>
   </div>
       `,
-      showCancelButton: false,
-      focusConfirm: false,
-      customClass: {
-          popup: 'swal-wide'
-      }
-  });
-  }
+            showCancelButton: false,
+            focusConfirm: false,
+            customClass: {
+                popup: 'swal-wide'
+            }
+        });
+    }
 
-  /**
-     * alert success
-     * @param title alert title
-     * @param text body of alert
-     * @param buttonEnable control if visible the button
-     * @param timer time of live of the alert
+    /**
+       * alert success
+       * @param title alert title
+       * @param text body of alert
+       * @param buttonEnable control if visible the button
+       * @param timer time of live of the alert
+       */
+    async alertaSuccess(title: string, text: string, buttonEnable: boolean = true, timer: number = 1500) {
+        return Swal.fire({
+            icon: "success",
+            title: title,
+            text: text,
+            showConfirmButton: buttonEnable,
+            timer: timer
+        });
+    }
+    /**
+     * method for notification alerts
+     * @param text text of alert info,
+     * @param time alert duration time
+     * @param colorText color of text
+     * @param backgroundColor backgound color
+     * @param postition this postition in web
      */
-  async alertaSuccess(title: string, text: string, buttonEnable: boolean = true, timer: number = 1500) {
-    return  Swal.fire({
-      icon: "success",
-      title: title,
-      text: text,
-      showConfirmButton: buttonEnable,
-      timer: timer
-    });
-  }
-  /**
-   * method for notification alerts
-   * @param text text of alert info,
-   * @param time alert duration time
-   * @param colorText color of text
-   * @param backgroundColor backgound color
-   * @param postition this postition in web
-   */
-  async alertaInfo(text: string, time: number = 1200, colorText: string = "#229954", backgroundColor: string = "default", postition: SweetAlertPosition = "bottom-end"): Promise<void> {
-    await Swal.fire({
-      toast: true,
-      
-      position: postition,
-      color: colorText,
-      showConfirmButton: false,
-      timer: time,
-      background: backgroundColor,
-      customClass: {
-        popup: 'small-toast',
-        icon: 'small-icon',
-      },
-      html: `
+    async alertaInfo(text: string, time: number = 1200, colorText: string = "#229954", backgroundColor: string = "default", postition: SweetAlertPosition = "bottom-end"): Promise<void> {
+        await Swal.fire({
+            toast: true,
+
+            position: postition,
+            color: colorText,
+            showConfirmButton: false,
+            timer: time,
+            background: backgroundColor,
+            customClass: {
+                popup: 'small-toast',
+                icon: 'small-icon',
+            },
+            html: `
       <div class="small-toast-content">
         <h3>`
-        + text +
-        `<\h3>
+                + text +
+                `<\h3>
       </div>
     `
-    });
-  }
+        });
+    }
 
-  /**
-   * alert Error
-   * @param title alert title
-   * @param body body of the alert error
-   * @param footer footer, accept HTML
-   */
-  alertaError(title: string, body: string, footer: string = '<a href="#">Why do I have this issue?</a>'): void {
-    Swal.fire({
-      icon: "error",
-      title: title,
-      text: body,
-      footer: footer
-    });
-  }
+    /**
+     * alert Error
+     * @param title alert title
+     * @param body body of the alert error
+     * @param footer footer, accept HTML
+     */
+    alertaError(title: string, body: string, footer: string = '<a href="#">Why do I have this issue?</a>'): void {
+        Swal.fire({
+            icon: "error",
+            title: title,
+            text: body,
+            footer: footer
+        });
+    }
 }

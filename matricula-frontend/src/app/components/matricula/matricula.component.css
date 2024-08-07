@@ -75,16 +75,6 @@ section {
   width: 120px;
 }
 
-footer {
-  background-color: #007bff;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 1000;
-}
 
 .header-matricula{
   background-color: rgb(8, 85, 135);

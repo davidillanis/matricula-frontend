@@ -1,13 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import {MatCardModule} from '@angular/material/card';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
-import { LoginService } from '../../service/login.service';
 import { AlertEntityService } from '../../service/alert-entity.service';
+import { LoginService } from '../../service/login.service';
 
 @Component({
   selector: 'app-login',

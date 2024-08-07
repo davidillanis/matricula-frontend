@@ -1,36 +1,32 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { JsonPipe } from '@angular/common';
+import { Component, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { ErrorStateMatcher, provideNativeDateAdapter } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { ErrorStateMatcher } from '@angular/material/core';
-import { provideNativeDateAdapter } from '@angular/material/core';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatDividerModule } from '@angular/material/divider';
-import { JsonPipe } from '@angular/common';
-import { inject } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import {
   FormControl,
-  FormGroupDirective,
-  NgForm,
-  Validators,
-  FormsModule,
-  ReactiveFormsModule,
   FormGroup,
+  FormGroupDirective,
+  FormsModule,
+  NgForm,
+  ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
-import { CursoEntidad } from '../../model/curso-entidad';
-import { CursoService } from '../../service/curso.service';
-import { EstudianteService } from '../../service/estudiante.service';
-import { MatriculaService } from '../../service/matricula.service';
 import { ToastrService } from 'ngx-toastr';
+import { CursoEntidad } from '../../model/curso-entidad';
 import { EstudianteEntidad } from '../../model/estudiante-entidad';
 import { EMatricula, MatriculaEntidad } from '../../model/matricula-entidad';
+import { CursoService } from '../../service/curso.service';
+import { EstudianteService } from '../../service/estudiante.service';
 import { ImageService } from '../../service/image.service';
-import { url } from 'inspector';
+import { MatriculaService } from '../../service/matricula.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -69,12 +65,12 @@ export class MatriculaComponent {
   matcher = new MyErrorStateMatcher();
 
   estudinteControl = new FormGroup({
-    nombre: new FormControl('David', [Validators.required]),
-    apellido: new FormControl('Abel', [Validators.required]),
-    dni: new FormControl('74572131', [Validators.required, Validators.pattern('^[0-9]{8}$')]),
-    codigo: new FormControl('1003020212', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
-    telefono: new FormControl('930353412', [Validators.required, Validators.pattern('^[0-9]{9}$')]),
-    email: new FormControl('david@gmail.com', [Validators.required, Validators.email]),
+    nombre: new FormControl('', [Validators.required]),
+    apellido: new FormControl('', [Validators.required]),
+    dni: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{8}$')]),
+    codigo: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
+    telefono: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{9}$')]),
+    email: new FormControl("", [Validators.required, Validators.email]),
   });
 
 

@@ -1,73 +1,91 @@
 .mat-toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .left-content {
-    display: flex;
-    align-items: center;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-content {
+  display: flex;
+  align-items: center;
+}
+
+.menu-content {
+  display: flex;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.logo {
+  height: 40px;
+  /* ajusta la altura según sea necesario */
+  margin-right: 20px;
+  /* espacio entre la imagen y el resto del contenido */
+}
+
+.mobile-menu-button {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  position: absolute;
+  top: 128px;
+  /* altura del toolbar */
+  width: 100%;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
   .menu-content {
-    display: flex;
+    display: none;
   }
-  
-  .spacer {
-    flex: 1;
-  }
-  
-  .logo {
-    height: 40px; /* ajusta la altura según sea necesario */
-    margin-right: 20px; /* espacio entre la imagen y el resto del contenido */
-  }
-  
+
   .mobile-menu-button {
-    display: none;
+    display: block;
   }
-  
+
   .mobile-menu {
-    display: none;
-    flex-direction: column;
-    background: #fff;
-    position: absolute;
-    top: 128px; /* altura del toolbar */
-    width: 100%;
-    z-index: 10;
+    display: flex;
   }
-  
-  @media (max-width: 768px) {
-    .menu-content {
-      display: none;
-    }
-    .mobile-menu-button {
-      display: block;
-    }
-    .mobile-menu {
-      display: flex;
-    }
-  }
-  
-
-
-.header-logo{
-    display: flex;
-    background-color: rgb(232, 218, 239 );
-}
-.header-logo-izq{
-    width: 50%;
-    display: flex;
-    justify-content: left;
-}
-.header-logo-der{
-    width: 50%;
-    display: flex;
-    justify-content: right;
 }
 
-.nav-main-unajma{
+
+
+.header-logo {
+  display: flex;
+  background-color: rgb(232, 218, 239);
+}
+
+.header-logo-izq {
+  width: 50%;
+  display: flex;
+  justify-content: left;
+}
+
+.header-logo-der {
+  width: 50%;
+  display: flex;
+  justify-content: right;
+}
+
+.nav-main-unajma {
   position: fixed;
   top: -10px;
   z-index: 1000;
   width: 100%;
+}
+
+footer {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
 }

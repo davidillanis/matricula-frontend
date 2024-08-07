@@ -1,26 +1,26 @@
+import { DataSource } from '@angular/cdk/collections';
 import { Component, Inject, OnInit } from '@angular/core';
-import {DataSource} from '@angular/cdk/collections';
-import {Observable, ReplaySubject} from 'rxjs';
-import {MatTableModule} from '@angular/material/table';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
-import { EMatricula, MatriculaEntidad } from '../../../model/matricula-entidad';
-import { MatriculaService } from '../../../service/matricula.service';
-import {MatInputModule} from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import {
-  MatDialog,
   MAT_DIALOG_DATA,
-  MatDialogTitle,
+  MatDialog,
   MatDialogContent,
+  MatDialogTitle,
 } from '@angular/material/dialog';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+import { Observable, ReplaySubject } from 'rxjs';
 import Swal from 'sweetalert2';
-import { EstudianteEntidad } from '../../../model/estudiante-entidad';
 import { CursoEntidad } from '../../../model/curso-entidad';
+import { EstudianteEntidad } from '../../../model/estudiante-entidad';
+import { EMatricula, MatriculaEntidad } from '../../../model/matricula-entidad';
 import { ImageService } from '../../../service/image.service';
+import { MatriculaService } from '../../../service/matricula.service';
 
 @Component({
   selector: 'app-admin-solicitud',

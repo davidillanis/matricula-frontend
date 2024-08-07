@@ -1,21 +1,19 @@
-import { Component, Inject, inject } from '@angular/core';
 import { DataSource } from '@angular/cdk/collections';
-import { Observable, ReplaySubject } from 'rxjs';
-import { MatTableModule } from '@angular/material/table';
+import { ChangeDetectionStrategy, Component, Inject, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDividerModule } from '@angular/material/divider';
-import { ProfesorService } from '../../../service/profesor.service';
-import { ProfesorEntidad } from '../../../model/profesor-entidad';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
-import { MatMenuModule } from '@angular/material/menu';
-import { CursoEntidad } from '../../../model/curso-entidad';
-import { AlertEntityService } from '../../../service/alert-entity.service';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogModule } from '@angular/material/dialog';
-import {ChangeDetectionStrategy} from '@angular/core';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+import { Observable, ReplaySubject } from 'rxjs';
+import { CursoEntidad } from '../../../model/curso-entidad';
+import { ProfesorEntidad } from '../../../model/profesor-entidad';
+import { AlertEntityService } from '../../../service/alert-entity.service';
+import { ProfesorService } from '../../../service/profesor.service';
 
-import { BehaviorSubject} from 'rxjs';
 
 @Component({
   selector: 'app-admin-profesor',
@@ -106,15 +104,12 @@ class ExampleDataSource extends DataSource<ProfesorEntidad> {
 
 
 
-import { OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatInputModule } from '@angular/material/input';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'dialog-content-example-dialog',

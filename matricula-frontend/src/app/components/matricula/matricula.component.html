@@ -1,7 +1,7 @@
 
 
 <div class="header-matricula">
-  <h1 class="header-text">¡Matricúlate Ya!</h1>
+  <h1 class="header-text">¡Matriculate Ya!</h1>
 </div>
 <span></span><br>
 <div class="container">
@@ -24,15 +24,15 @@
         <mat-label>DNI</mat-label>
         <input type="text" matInput formControlName="dni">
         @if (estudinteControl.get('dni')?.invalid) {
-        <mat-error>8 digitos de numeros</mat-error>
+        <mat-error>8 dígitos de números</mat-error>
         }
       </mat-form-field>
 
       <mat-form-field class="example-full-width form-component">
-        <mat-label>Codigo estudinte</mat-label>
+        <mat-label>Código estudiante</mat-label>
         <input type="text" matInput formControlName="codigo">
         @if (estudinteControl.get('codigo')?.invalid) {
-        <mat-error>11 digitos de numeros</mat-error>
+        <mat-error>11 dígitos de números</mat-error>
         }
       </mat-form-field>
     </div>
@@ -71,7 +71,7 @@
 
     <div class="raw-container">
       <div class="mb-3">
-        <mat-label>Foto Baucher</mat-label>
+        <mat-label>Foto Boucher</mat-label>
         <input class="form-control form-control-sm" type="file" name="file" id="file" accept=".jpg, .jpeg, .png, .gif"
           (change)="loadImage('file','preview', $event)">
       </div>
@@ -95,7 +95,7 @@
         <input class="form-control form-control-sm" type="file" name="file" id="fileFichaMatricula" accept=".pdf" (change)="cargarPDFMatricula($event)">
       </div>
       <div class="mb-3">
-        <mat-label>Decalaracion Juarada</mat-label>
+        <mat-label>Declaración Jurada</mat-label>
         <input class="form-control form-control-sm" type="file" name="file" id="fileDeclaracionJurada" accept=".pdf"  (change)="cargarPDFDeclaracionJurada($event)">
       </div>
       <div class="mb-3">
@@ -110,10 +110,3 @@
     </div>
   </form>
 </div>
-
-<br><br><br>
-<p>.</p>
-
-<footer>
-  <p>&copy; 2024 Universidad Nacional José María Arguedas - Todos los derechos reservados</p>
-</footer>

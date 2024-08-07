@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CursoService } from '../../service/curso.service';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { CursoEntidad } from '../../model/curso-entidad';
-import {ChangeDetectionStrategy} from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
 import { AlertEntityService } from '../../service/alert-entity.service';
+import { CursoService } from '../../service/curso.service';
 
 @Component({
   selector: 'app-idioma',

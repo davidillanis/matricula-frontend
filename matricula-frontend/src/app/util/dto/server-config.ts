@@ -1,5 +1,5 @@
 export class ServerConfig {
-    private static readonly serverApi:string="http://localhost:8083";
+    private static readonly serverApi:string="https://matricula-nkxt.onrender.com";
 
     public static concatBackendAPI(router:string){
         return this.serverApi.concat(router);

@@ -1,25 +1,25 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import {DataSource} from '@angular/cdk/collections';
-import {Observable, ReplaySubject} from 'rxjs';
-import {MatTableModule} from '@angular/material/table';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
+import { DataSource } from '@angular/cdk/collections';
+import { Component, Inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import {
+  MAT_DIALOG_DATA,
+  MatDialog,
+  MatDialogContent,
+  MatDialogTitle,
+} from '@angular/material/dialog';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+import { Observable, ReplaySubject } from 'rxjs';
+import Swal from 'sweetalert2';
+import { CursoEntidad } from '../../../model/curso-entidad';
+import { EstudianteEntidad } from '../../../model/estudiante-entidad';
 import { EMatricula, MatriculaEntidad } from '../../../model/matricula-entidad';
 import { MatriculaService } from '../../../service/matricula.service';
-import {MatInputModule} from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms';
-import {
-  MatDialog,
-  MAT_DIALOG_DATA,
-  MatDialogTitle,
-  MatDialogContent,
-} from '@angular/material/dialog';
-import Swal from 'sweetalert2';
-import { EstudianteEntidad } from '../../../model/estudiante-entidad';
-import { CursoEntidad } from '../../../model/curso-entidad';
 
 @Component({
   selector: 'app-admin-matricula',
@@ -168,27 +168,26 @@ export class ModalImagenVoucher {
 
 
 
-import { ChangeDetectionStrategy, signal } from '@angular/core';
+import { JsonPipe } from '@angular/common';
+import { signal } from '@angular/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { JsonPipe } from '@angular/common';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import {
   FormControl,
+  FormGroup,
   FormGroupDirective,
   NgForm,
-  Validators,
   ReactiveFormsModule,
-  FormGroup,
+  Validators,
 } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { AlertEntityService } from '../../../service/alert-entity.service';
 import { CursoService } from '../../../service/curso.service';
 import { EstudianteService } from '../../../service/estudiante.service';
-import { ToastrService } from 'ngx-toastr';
 import { ImageService } from '../../../service/image.service';
-import { AlertEntityService } from '../../../service/alert-entity.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -226,12 +225,12 @@ export class ModalMatricular {
   matcher = new MyErrorStateMatcher();
 
   estudinteControl = new FormGroup({
-    nombre: new FormControl('David', [Validators.required]),
-    apellido: new FormControl('Abel', [Validators.required]),
-    dni: new FormControl('75423113', [Validators.required, Validators.pattern('^[0-9]{8}$')]),
-    codigo: new FormControl('1003620212', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
-    telefono: new FormControl('930353412', [Validators.required, Validators.pattern('^[0-9]{9}$')]),
-    email: new FormControl('david@gmail.com', [Validators.required, Validators.email]),
+    nombre: new FormControl('', [Validators.required]),
+    apellido: new FormControl('', [Validators.required]),
+    dni: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{8}$')]),
+    codigo: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
+    telefono: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{9}$')]),
+    email: new FormControl('', [Validators.required, Validators.email]),
   });
 
 

@@ -9,7 +9,7 @@
     <td mat-cell *matCellDef="let element">{{formatFecha(element.fechaSolicitud)}}</td>
   </ng-container>
   <ng-container matColumnDef="symbol">
-    <th mat-header-cell *matHeaderCellDef>Codigo Estudiante</th>
+    <th mat-header-cell *matHeaderCellDef>Código Estudiante</th>
     <td mat-cell *matCellDef="let element">
       <button mat-button (click)="modalEstudiante(element.estudianteEntidad)">{{element.estudianteEntidad.codigoEstudiante}}</button>
     </td>
@@ -29,7 +29,7 @@
           <mat-select  name="food">
               <mat-option><a (click)="openDialog(element.urlVoucher)">Voucher de Pago</a></mat-option>
               <mat-option><a [href]="element.urlPdfMatricula" target="_blank">Ficha De Matricula</a></mat-option>
-              <mat-option><a [href]="element.urlPdfDeclaracionJurada" target="_blank">Declaracion Jurada</a></mat-option>
+              <mat-option><a [href]="element.urlPdfDeclaracionJurada" target="_blank">Declaración Jurada</a></mat-option>
               <mat-option><a [href]="element.urlPDFCartaCompromiso" target="_blank">Carta de compromiso</a></mat-option>
           </mat-select>
         </mat-form-field>
@@ -38,7 +38,7 @@
   </ng-container>
 
   <ng-container matColumnDef="accion">
-    <th mat-header-cell *matHeaderCellDef>Accion</th>
+    <th mat-header-cell *matHeaderCellDef>Acción</th>
     <td mat-cell *matCellDef="let element">
       <button mat-fab style="background-color: green; height: 40px; width: 40px;" (click)="aceptarSolicitud(element.idMatricula)">
         <mat-icon>check</mat-icon>

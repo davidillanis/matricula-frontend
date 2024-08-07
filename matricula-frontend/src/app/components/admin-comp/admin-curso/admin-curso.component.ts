@@ -1,16 +1,15 @@
-import { Component, Inject, OnInit } from '@angular/core';
 import { DataSource } from '@angular/cdk/collections';
-import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
-import { MatTableModule } from '@angular/material/table';
+import { ChangeDetectionStrategy, Component, Inject, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
-import { CursoService } from '../../../service/curso.service';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { Observable, ReplaySubject } from 'rxjs';
 import { CursoEntidad } from '../../../model/curso-entidad';
 import { ProfesorEntidad } from '../../../model/profesor-entidad';
 import { AlertEntityService } from '../../../service/alert-entity.service';
-import {ChangeDetectionStrategy, inject} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialog, MatDialogModule} from '@angular/material/dialog';
+import { CursoService } from '../../../service/curso.service';
 import { ProfesorService } from '../../../service/profesor.service';
 
 @Component({
@@ -116,13 +115,12 @@ class ExampleDataSource extends DataSource<CursoEntidad> {
 }
 
 
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatNativeDateModule, provideNativeDateAdapter } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import {provideNativeDateAdapter} from '@angular/material/core';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { ImageService } from '../../../service/image.service';
 @Component({
   selector: 'admin-curso-guardar',

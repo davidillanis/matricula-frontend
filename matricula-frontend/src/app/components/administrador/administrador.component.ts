@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../../service/login.service';
+import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { ActivatedRoute, Router } from '@angular/router';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatListModule} from '@angular/material/list';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { LoginService } from '../../service/login.service';
 import { AdminCursoComponent } from '../admin-comp/admin-curso/admin-curso.component';
 import { AdminMatriculaComponent } from '../admin-comp/admin-matricula/admin-matricula.component';
 import { AdminProfesorComponent } from '../admin-comp/admin-profesor/admin-profesor.component';

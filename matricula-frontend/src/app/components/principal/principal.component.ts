@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { CursoEntidad } from '../../model/curso-entidad';
 import { CursoService } from '../../service/curso.service';
-import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-principal',
